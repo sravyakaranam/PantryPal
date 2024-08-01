@@ -18,7 +18,13 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-const firestore = getFirestore(app);
+//const app = initializeApp(firebaseConfig);
+//const analytics = getAnalytics(app);
+//const firestore = getFirestore(app);
+let firestore;
+if (typeof window !== 'undefined') {
+    const app = initializeApp(firebaseConfig);
+    firestore = getFirestore(app);
+  }
+
 export { firestore };
